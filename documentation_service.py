@@ -70,7 +70,6 @@ def extract_frames_from_video(video_path: str, output_dir: Path, interval_sec: f
         frame_idx += frame_interval
 
     cap.release()
-    cv2.destroyAllWindows()
     return saved_paths
 
 
