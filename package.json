@@ -1,0 +1,10 @@
+{
+  "name": "chatgpt-api",
+  "version": "1.0.0",
+  "description": "API REST em Python para integração com ChatGPT da OpenAI",
+  "scripts": {
+    "start": "uvicorn main:app --reload",
+    "dev": "uvicorn main:app --reload --host 0.0.0.0",
+    "setup": "pip install -r requirements.txt"
+  }
+}

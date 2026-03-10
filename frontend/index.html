@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Doc Generator</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <h1>Doc Generator</h1>
+    </header>
+
+    <main class="content">
+      <section id="tab-documentation" class="tab-content active">
+        <div class="card">
+          <h2>Gerar Documentação a partir de Vídeo</h2>
+          <p>Envie um vídeo (MP4) e a transcrição (VTT) para gerar documentação automática com screenshots.</p>
+
+          <form id="doc-form" class="upload-form">
+            <div class="form-group">
+              <label for="video">Vídeo (MP4, WebM ou MOV)</label>
+              <input type="file" id="video" name="video" accept=".mp4,.webm,.mov" required>
+            </div>
+            <div class="form-group">
+              <label for="vtt">Transcrição (VTT)</label>
+              <input type="file" id="vtt" name="vtt" accept=".vtt" required>
+            </div>
+            <button type="submit" class="btn btn-primary" id="submit-btn">
+              Gerar Documentação
+            </button>
+          </form>
+
+          <div id="doc-loading" class="loading" style="display: none;">
+            <div class="spinner"></div>
+            <p>Processando vídeo, extraindo frames e gerando documentação...</p>
+          </div>
+
+          <div id="doc-result" class="doc-result" style="display: none;">
+            <h3>Documentação Gerada</h3>
+            <div id="doc-content" class="doc-content markdown-body"></div>
+            <p class="meta">
+              Screenshots salvos em: <code id="screenshots-path"></code>
+            </p>
+          </div>
+
+          <div id="doc-error" class="error-box" style="display: none;"></div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
